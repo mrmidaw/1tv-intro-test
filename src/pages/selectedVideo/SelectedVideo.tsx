@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { $api } from "../../api/apiService";
 import { SendReview } from "../../components/review/SendReview";
+import Meta from "../../utils/meta/Meta";
 import { IComments, IVideo } from "../main/Main.interface";
 import styles from "./SelectedVideo.module.scss";
 
@@ -53,10 +54,13 @@ const SelectedVideo = () => {
 	}, [id]);
 
 	return (
-		<>
+		<Meta
+			title="Топ видео"
+			description="Новости, познавательные передачи и развлекательные шоу, фильмы и сериалы – все это вы можете смотреть на сайте Первого канала."
+		>
 			<div>SelectedVideo is {id}</div>
 			<SendReview id={id} />
-		</>
+		</Meta>
 	);
 };
 

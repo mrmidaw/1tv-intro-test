@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Helmet } from "react-helmet-async";
 
-import logoImage from "../../assets/img/logo_small.png";
+import logoImage from "../../assets/images/logo.jpg";
 import { onlyText } from "../clearText/clearText";
 
 /* https://iconifier.net/ */
@@ -13,7 +13,7 @@ interface ISeo {
 }
 
 const Meta: FC<ISeo> = ({ title, description, children }) => {
-	const siteName = " Anti Captcha | More than an Captcha";
+	const siteName = " Первый канал: Новости. Видео. Телепрограмма. Прямой эфир.";
 
 	const titleMerge = (title: string) => `${siteName} | ${title}`;
 
