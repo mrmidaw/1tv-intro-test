@@ -4,6 +4,15 @@
     background-color: #21222d;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 96px 204px 85px 203px;
+
+    @media screen and (max-width: 1400px) {
+        padding: 85px 148px;
+    }
+
+    @media screen and (max-width: 900px) {
+        padding: 75px 30px;
+    }
 }

@@ -16,5 +16,5 @@ export interface IComment {
 
 export interface IComments {
 	pid: number;
-	comments: Comment[];
+	comments: IComment[];
 }
