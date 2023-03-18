@@ -15,7 +15,22 @@ const SelectedVideo = () => {
 	const { id } = useParams();
 
 	const [isLoadingVideo, setIsLoadingVideo] = useState<boolean>(false);
-	const [video, setVideo] = useState<IVideoFeature | {}>({});
+	const [video, setVideo] = useState<IVideoFeature>({
+		id: 0,
+		title: "",
+		image: "",
+		genre: [""],
+		production: {
+			year: "2021",
+			country: "Россия",
+		},
+		labels: {
+			fullhd: true,
+			age_restrictions: "18+",
+			subtitles: true,
+		},
+	});
+
 	const [isLoadingComment, setIsLoadingComment] = useState<boolean>(false);
 	const [allComments, setAllComments] = useState<IComments>({
 		pid: 0,
