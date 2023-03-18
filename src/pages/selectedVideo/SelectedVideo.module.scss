@@ -23,10 +23,57 @@
         width: 100%;
     }
 
+    @media screen and (max-width: 1290px) {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
     .link {
         font-size: 12px;
         line-height: 24px;
         color: #188bf5;
+
+        .all__video {
+            display: flex;
+        }
+
+        .all {
+            display: none;
+        }
+
+        .list {
+            display: none;
+        }
+
+        @media screen and (max-width: 1290px) {
+            .all__video {
+                display: none;
+            }
+
+            .all {
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .all {
+                display: none;
+            }
+
+            .list {
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .list {
+                display: none;
+            }
+
+            .all {
+                display: flex;
+            }
+        }
     }
 }
 

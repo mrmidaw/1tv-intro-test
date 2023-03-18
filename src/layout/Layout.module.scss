@@ -15,4 +15,12 @@
     @media screen and (max-width: 900px) {
         padding: 75px 30px;
     }
+
+    @media screen and (max-width: 750px) {
+        padding: 75px 30px 57px 30px;
+    }
+
+    @media screen and (max-width: 550px) {
+        padding: 58px 23px 47px 24px;
+    }
 }

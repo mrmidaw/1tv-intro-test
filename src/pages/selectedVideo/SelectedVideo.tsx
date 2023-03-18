@@ -17,6 +17,8 @@ const SelectedVideo = () => {
 	const [isLoadingComment, setIsLoadingComment] = useState<boolean>(false);
 	const [video, setVideo] = useState<IVideo | {}>({});
 
+	console.log(isLoadingComment);
+
 	const [allComments, setAllComments] = useState<IComments>({
 		pid: 0,
 		comments: [],
@@ -69,14 +71,20 @@ const SelectedVideo = () => {
 				<div className={styles.header__box}>
 					<span>выбранное видео</span>
 					<Link to="/" className={styles.link}>
-						все видео
+						<span className={styles.all__video}>все видео</span>
+						<span className={styles.all}>все</span>
+						<span className={styles.list}>к списку видео</span>
 					</Link>
 				</div>
 
 				<div className={styles.inner}>
 					<div className={styles.video__box}>
 						{allComments?.comments?.map((item, index) => (
-							<Comment key={item.id} comment={item} />
+							<Comment
+								key={item.id}
+								comment={item}
+								isLoadingComment={isLoadingComment}
+							/>
 						))}
 
 						<SendReview id={id} />

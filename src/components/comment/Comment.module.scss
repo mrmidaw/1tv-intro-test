@@ -3,10 +3,22 @@
     display: flex;
     flex-direction: column;
     padding: 41px 75px 41px 44px;
-    background: #2c2c37;
+    background: var(--bg-secondary);
     border-radius: 15px;
     gap: 21px;
     color: #fff;
+
+    @media screen and (max-width: 1290px) {
+        padding: 40px 90px 35px 44px;
+    }
+
+    @media screen and (max-width: 750px) {
+        padding: 40px 55px 35px 44px;
+    }
+
+    @media screen and (max-width: 550px) {
+        padding: 30px 13px 25px 34px;
+    }
 }
 
 .author__box {
@@ -17,6 +29,15 @@
     gap: 27px;
     font-size: 20px;
     line-height: 28px;
+
+    @media screen and (max-width: 1290px) {
+        gap: 28px;
+    }
+
+    @media screen and (max-width: 550px) {
+        font-size: 16px;
+        line-height: 28px;
+    }
 }
 
 .avatar__box {
@@ -28,6 +49,10 @@
 
     img {
         border-radius: 50%;
+    }
+
+    @media screen and (max-width: 1290px) {
+        display: none;
     }
 }
 
@@ -48,6 +73,11 @@
     font-size: 16px;
     line-height: 20px;
     color: #747587;
+
+    @media screen and (max-width: 550px) {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }
 
 .text {
@@ -55,4 +85,9 @@
     font-size: 20px;
     line-height: 28px;
     color: #ffffff;
+
+    @media screen and (max-width: 550px) {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
