@@ -4,21 +4,19 @@ import { Link, useParams } from "react-router-dom";
 
 import { $api } from "../../api/apiService";
 import adGolos from "../../assets/images/ad-golos.png";
+import AboutVideo from "../../components/aboutVideo/AboutVideo";
 import { Comment } from "../../components/comment/Comment";
 import { SendReview } from "../../components/sendReview/SendReview";
 import Meta from "../../utils/meta/Meta";
-import { IComment, IComments, IVideo } from "../main/Main.interface";
+import { IComments, IVideoFeature } from "../main/Main.interface";
 import styles from "./SelectedVideo.module.scss";
 
 const SelectedVideo = () => {
 	const { id } = useParams();
 
 	const [isLoadingVideo, setIsLoadingVideo] = useState<boolean>(false);
+	const [video, setVideo] = useState<IVideoFeature | {}>({});
 	const [isLoadingComment, setIsLoadingComment] = useState<boolean>(false);
-	const [video, setVideo] = useState<IVideo | {}>({});
-
-	console.log(isLoadingComment);
-
 	const [allComments, setAllComments] = useState<IComments>({
 		pid: 0,
 		comments: [],
@@ -79,6 +77,9 @@ const SelectedVideo = () => {
 
 				<div className={styles.inner}>
 					<div className={styles.video__box}>
+						{/* *****************О ВИДЕО******************* */}
+						<AboutVideo videoFeature={video} />
+						{/* *****************КОММЕНТАРИИ******************* */}
 						{allComments?.comments?.map((item, index) => (
 							<Comment
 								key={item.id}
@@ -86,7 +87,7 @@ const SelectedVideo = () => {
 								isLoadingComment={isLoadingComment}
 							/>
 						))}
-
+						{/* *****************ОТПРАВИТЬ ОТЗЫВ******************* */}
 						<SendReview id={id} />
 					</div>
 					<div className={styles.ad__box}>

@@ -7,6 +7,26 @@ export interface IVideo {
 	detail: string;
 }
 
+export interface Production {
+	year: string;
+	country: string;
+}
+
+export interface Labels {
+	fullhd: boolean;
+	subtitles: boolean;
+	age_restrictions: string;
+}
+
+export interface IVideoFeature {
+	id: number;
+	title: string;
+	image: string;
+	genre: string[];
+	production: Production;
+	labels: Labels;
+}
+
 export interface IComment {
 	id: number;
 	author: string;

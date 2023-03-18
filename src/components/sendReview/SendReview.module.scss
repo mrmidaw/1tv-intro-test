@@ -93,7 +93,7 @@
 
 .area__container {
     @extend .input__container;
-    min-height: 150px;
+    min-height: 160px;
 }
 
 .text__red {
@@ -181,6 +181,7 @@
     border: none;
     outline: transparent solid 2px;
     outline-offset: 2px;
+    font-family: "Montserrat";
 
     @media screen and (max-width: 550px) {
         width: 100%;

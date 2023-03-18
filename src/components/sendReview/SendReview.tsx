@@ -179,7 +179,7 @@ export const SendReview: FC<IReviewProps> = ({ id }) => {
 					</button>
 
 					<button
-						onClick={() => fakeClickHandler("ошибка")}
+						type="reset"
 						disabled={!isError}
 						className={styles.button__error}
 						aria-label="Произошла ошибка"

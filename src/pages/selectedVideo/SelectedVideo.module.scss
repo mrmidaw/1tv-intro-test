@@ -28,6 +28,11 @@
         line-height: 29px;
     }
 
+    @media screen and (max-width: 1290px) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
     .link {
         font-size: 12px;
         line-height: 24px;
@@ -113,12 +118,12 @@
         max-height: 690px;
     }
 
-    @media screen and (max-width: 1290px) {
+    @media screen and (max-width: 1350px) {
         padding: 0px;
         height: 600px;
     }
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1150px) {
         display: none;
     }
 }
