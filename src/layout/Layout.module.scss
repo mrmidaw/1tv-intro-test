@@ -6,21 +6,17 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 96px 204px 85px 203px;
+    padding: 85px 204px 85px 203px;
 
-    @media screen and (max-width: 1400px) {
-        padding: 85px 148px;
+    @media screen and (max-width: 1438px) {
+        padding: 85px 148px 66px 148px;
     }
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1023px) {
         padding: 75px 30px;
     }
 
-    @media screen and (max-width: 750px) {
-        padding: 75px 30px 57px 30px;
-    }
-
-    @media screen and (max-width: 550px) {
-        padding: 58px 23px 47px 24px;
+    @media screen and (max-width: 743px) {
+        padding: 58px 23px 43px 24px;
     }
 }
