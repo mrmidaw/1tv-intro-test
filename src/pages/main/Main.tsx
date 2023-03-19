@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Slider from "react-slick";
 
 import { $api } from "../../api/apiService";
 import adGolos from "../../assets/images/ad-golos.png";
@@ -12,6 +11,16 @@ import styles from "./Main.module.scss";
 const Main = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [allVideos, setAllVideos] = useState<IVideo[]>([]);
+
+	const settings = {
+		className: "center",
+		infinite: false,
+		accessibility: true,
+		slidesToShow: 2,
+		speed: 500,
+		rows: 2,
+		// slidesPerRow: 1,
+	};
 
 	// ************ФУНКЦИЯ ПОЛУЧЕНИЯ ВСЕх ВИДЕО***********
 	const getAllVideos = async () => {
@@ -46,9 +55,11 @@ const Main = () => {
 				<div className={styles.inner}>
 					<div className={styles.videos__box}>
 						<div className={styles.slider__box}>
-							{allVideos?.map((video, index) => (
-								<VideoPreview key={video.id} video={video} />
-							))}
+							<Slider {...settings}>
+								{allVideos?.map((video, index) => (
+									<VideoPreview key={video.id} video={video} />
+								))}
+							</Slider>
 						</div>
 
 						<div className={styles.buttons__box}></div>
