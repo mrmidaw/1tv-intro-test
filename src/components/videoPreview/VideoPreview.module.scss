@@ -5,16 +5,103 @@
     justify-content: flex-start;
     max-width: 488px;
     height: auto;
-    gap: 15px;
+    gap: 10px;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
     color: #ffffff;
-    transition: all 0.5s;
 }
 
-img {
-    width: 100%;
-    height: 100%;
+.image__box {
+    width: 488px;
+    min-height: 272px;
     border-radius: 15px;
+    position: relative;
+
+    &:hover {
+        .filter {
+            opacity: 0.8;
+        }
+
+        .button__box {
+            opacity: 1;
+        }
+    }
+
+    .filter {
+        transition: opacity 0.4s linear;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000000;
+        opacity: 0;
+    }
+
+    .button__box {
+        transition: all 0ss ease-in-out;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        opacity: 0;
+        padding: 25px 28px 33px 27px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #ffffff;
+        }
+
+        button {
+            background: var(--bg-main);
+            border-radius: 60px;
+            width: 300px;
+            height: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            border: none;
+            outline: transparent solid 2px;
+            outline-offset: 2px;
+            cursor: pointer;
+            transition: all 0.25s;
+            opacity: 1;
+
+            &:hover {
+                background: #383838;
+            }
+
+            &:focus {
+                outline: 1px solid #002d57;
+            }
+
+            &:focus-visible {
+                outline: 1px solid #002d57;
+            }
+
+            &:disabled {
+                opacity: 0.25;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.text__box {
+    height: 50px;
 }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { $api } from "../../api/apiService";
@@ -13,6 +13,10 @@ import styles from "./SelectedVideo.module.scss";
 
 const SelectedVideo = () => {
 	const { id } = useParams();
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const [isLoadingVideo, setIsLoadingVideo] = useState<boolean>(false);
 	const [video, setVideo] = useState<IVideoFeature>({
