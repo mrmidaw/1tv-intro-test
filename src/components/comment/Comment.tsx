@@ -1,16 +1,11 @@
 import React, { FC } from "react";
 
 import authorLogo from "../../assets/images/author-logo.png";
-import { IComment } from "../../pages/main/Main.interface";
 import SkeletonLoader from "../../ui/skeleton-loader/SkeletonLoader";
 import styles from "./Comment.module.scss";
+import { ICommentProps } from "./comment.interface";
 
-interface IProps {
-	comment: IComment;
-	isLoadingComment: boolean;
-}
-
-export const Comment: FC<IProps> = ({ comment, isLoadingComment }) => {
+export const Comment: FC<ICommentProps> = ({ comment, isLoadingComment }) => {
 	return (
 		<>
 			{isLoadingComment ? (

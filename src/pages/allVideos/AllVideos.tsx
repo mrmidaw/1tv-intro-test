@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import { $api } from "../../api/apiService";
 import adGolos from "../../assets/images/ad-golos.png";
 import { VideoPreview } from "../../components/videoPreview/VideoPreview";
+import { IVideo } from "../../interfaces/Main.interface";
 import Meta from "../../utils/meta/Meta";
-import { IVideo } from "./Main.interface";
-import styles from "./Main.module.scss";
+import styles from "./AllVideos.module.scss";
 
-const Main = () => {
+const AllVideos: FC = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [allVideos, setAllVideos] = useState<IVideo[]>([]);
 
@@ -76,4 +76,4 @@ const Main = () => {
 	);
 };
 
-export default Main;
+export default AllVideos;

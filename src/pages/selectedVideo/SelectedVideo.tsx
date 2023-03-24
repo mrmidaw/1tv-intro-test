@@ -1,17 +1,17 @@
 import axios from "axios";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { FC, useEffect, useLayoutEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { $api } from "../../api/apiService";
 import adGolos from "../../assets/images/ad-golos.png";
-import AboutVideo from "../../components/aboutVideo/AboutVideo";
+import { AboutVideo } from "../../components/aboutVideo/AboutVideo";
 import { Comment } from "../../components/comment/Comment";
 import { SendReview } from "../../components/sendReview/SendReview";
+import { IComments, IVideoFeature } from "../../interfaces/Main.interface";
 import Meta from "../../utils/meta/Meta";
-import { IComments, IVideoFeature } from "../main/Main.interface";
 import styles from "./SelectedVideo.module.scss";
 
-const SelectedVideo = () => {
+const SelectedVideo: FC = () => {
 	const { id } = useParams();
 
 	useLayoutEffect(() => {
@@ -41,7 +41,7 @@ const SelectedVideo = () => {
 		comments: [],
 	});
 
-	// ************ФУНКЦИЯ ПОЛУЧЕНИЯ ВИДЕО ПО ID***********
+	// ************ПОЛУЧЕНИЯ ВИДЕО ПО ID***********
 	const getVideoById = async () => {
 		setIsLoadingVideo(true);
 
@@ -56,7 +56,7 @@ const SelectedVideo = () => {
 		}
 	};
 
-	// ************ФУНКЦИЯ ПОЛУЧЕНИЯ КОММЕНТАРИЕВ ПО ID***********
+	// ************ПОЛУЧЕНИЯ КОММЕНТАРИЕВ ПО ID***********
 	const getCommentById = async () => {
 		setIsLoadingComment(true);
 
@@ -71,7 +71,7 @@ const SelectedVideo = () => {
 		}
 	};
 
-	// *****ВЫЗОВ ПРИ ПЕРВОЙ ЗАГРУЗКЕ***********
+	// *****ВЫЗОВ ПРИ ID***********
 	useEffect(() => {
 		if (!id) return;
 
@@ -98,6 +98,7 @@ const SelectedVideo = () => {
 					<div className={styles.video__box}>
 						{/* *****************О ВИДЕО******************* */}
 						<AboutVideo videoFeature={video} />
+
 						{/* *****************КОММЕНТАРИИ******************* */}
 						{allComments?.comments?.map((item, index) => (
 							<Comment
@@ -106,9 +107,11 @@ const SelectedVideo = () => {
 								isLoadingComment={isLoadingComment}
 							/>
 						))}
+
 						{/* *****************ОТПРАВИТЬ ОТЗЫВ******************* */}
 						<SendReview id={id} />
 					</div>
+
 					<div className={styles.ad__box}>
 						<img src={adGolos} alt="Программа Голос Дети" draggable={false} />
 					</div>

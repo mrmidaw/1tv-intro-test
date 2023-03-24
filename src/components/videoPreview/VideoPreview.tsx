@@ -1,14 +1,10 @@
 import React, { FC } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { IVideo } from "../../pages/main/Main.interface";
 import styles from "./VideoPreview.module.scss";
+import { IPreviewProps } from "./videoPreview.interface";
 
-interface IProps {
-	video: IVideo;
-}
-
-export const VideoPreview: FC<IProps> = ({ video }) => {
+export const VideoPreview: FC<IPreviewProps> = ({ video }) => {
 	const navigate = useNavigate();
 
 	const navigateHandler = (id: number) => {

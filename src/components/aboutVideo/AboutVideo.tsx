@@ -5,14 +5,10 @@ import kinopoiskIcon from "../../assets/images/kinopoisk.svg";
 import likeIcon from "../../assets/images/like.svg";
 import markIcon from "../../assets/images/mark.svg";
 import shareIcon from "../../assets/images/share.svg";
-import { IVideoFeature } from "../../pages/main/Main.interface";
 import styles from "./AboutVideo.module.scss";
+import { IAboutProps } from "./aboutVideo.interface";
 
-interface IProps {
-	videoFeature: IVideoFeature;
-}
-
-const AboutVideo: FC<IProps> = ({ videoFeature }) => {
+export const AboutVideo: FC<IAboutProps> = ({ videoFeature }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.poster}>
@@ -47,7 +43,7 @@ const AboutVideo: FC<IProps> = ({ videoFeature }) => {
 					<div className={styles.dot} />
 
 					{videoFeature?.genre?.map((item, index) => (
-						<p>{item}</p>
+						<p key={index}>{item}</p>
 					))}
 					<div className={styles.dot} />
 
@@ -95,5 +91,3 @@ const AboutVideo: FC<IProps> = ({ videoFeature }) => {
 		</div>
 	);
 };
-
-export default AboutVideo;

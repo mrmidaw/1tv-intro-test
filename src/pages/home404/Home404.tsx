@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { FC, useEffect, useLayoutEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./Home404.module.scss";
 
-const Home404 = () => {
+const Home404: FC = () => {
 	const navigate = useNavigate();
 
 	const [seconds, setSeconds] = useState<number>(10);
